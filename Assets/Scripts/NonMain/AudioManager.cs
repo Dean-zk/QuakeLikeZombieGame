@@ -4,17 +4,28 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    AudioClip m_Back1;
-    AudioClip m_Back2;
-    AudioClip m_Back3;
-
+    public AudioSource source;
+    [SerializeField] AudioClip m_Back1;
+    [SerializeField] AudioClip m_Back2;
+    [SerializeField] AudioClip m_Back3;
+    int i;
     void Start()
     {
-        
     }
 
     void Update()
     {
-        
+        PlayAudio();
+    }
+
+    void PlayAudio()
+    {
+        if (source.isPlaying)
+        { return; }
+
+        else if (!source.isPlaying)
+        {
+            source.PlayOneShot(m_Back1);
+        }
     }
 }

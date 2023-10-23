@@ -4,21 +4,19 @@ using UnityEngine;
 
 public class QPlasmaGun : MonoBehaviour
 {
-    ZombieAI zomb;
+    [SerializeField] ZombieAI zomb;
     Camera cam;
     RaycastHit hit;
     const float range = 1000000f;
     [SerializeField] ParticleSystem muzzleFlash;
     [SerializeField] AudioClip firing;
     [SerializeField] AudioSource source;
-    bool isPlaying = false;
 
-    int damage = 3;
+    int damage = 2;
     const int magSize = 200;
     int bulletsInMag = magSize;
     void Start()
     {
-        zomb = GetComponent<ZombieAI>();
         cam = GetComponent<Camera>();
     }
 
@@ -48,7 +46,8 @@ public class QPlasmaGun : MonoBehaviour
                 break;
 
                 case "Enemy":
-                    zomb.zombHealth -= damage;
+                    print("You hit a zombie");
+                    zomb.zombHealth = zomb.zombHealth - damage;
                 break;
             }
         }

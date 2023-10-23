@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // Contains the command the user wishes upon the character
-//! [x] = not done. [v] = done. [v*] = done but can change in the future.
 
 public class QMovement : MonoBehaviour
 {
+    /*
+    **KEEP IN MIND: This is a PORT of the Quake 3 movement. It is NOT FROM SCRATCH. I used the quake 3 source code to help me port this code.**
+     */
     QCam qCam;
     //^Scripts
     public float gravity = 20.0f;
@@ -23,8 +25,8 @@ public class QMovement : MonoBehaviour
     public float strafeAccel = 50.0f;      // How fast acceleration occurs to get up to sideStrafeSpeed when
     public float strafeSpeed = 1.0f;       // What the max speed to generate when side strafing
     public float jumpSpeed = 8.0f;         // The speed at which the character's up axis gains when hitting jump
-    public bool holdJumpToBhop = true;     // When enabled allows player to just hold jump button to keep on bhopping perfectly. Beware: smells like casual.
     private float dashAccel = 4.0f;
+    public bool holdJumpToBhop = true;     // When enabled allows player to just hold jump button to keep on bhopping perfectly. Beware: smells like casual.
 
     public CharacterController body;
     /*The CharacterController where the physics will be applied on*/

@@ -17,9 +17,9 @@ public class ZombieAI : MonoBehaviour
     void Update()
     {
         print(zombHealth);
-        if (zombHealth >= 0)
+        if (zombHealth <= 0)
         {
-            Destroy(zombie);
+            Object.Destroy(zombie);
         }
     }
 }

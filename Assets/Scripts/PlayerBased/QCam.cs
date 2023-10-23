@@ -14,7 +14,7 @@ public class QCam : MonoBehaviour
 
     public float FOV = 90.0f;
     // Start is called before the first frame update
-    private void Start() //TODO: Make a seperate class for this code and run it into its respected start function [v*]
+    private void Start() 
     {
         // Hide the cursor
         Cursor.visible = false;
