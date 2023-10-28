@@ -58,15 +58,19 @@
     <Analyzer Include="D:\Unity\2022.3.8f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\GunBehaviour\PlayerShoot.cs" />
     <Compile Include="Assets\Scripts\PlayerBased\QCam.cs" />
-    <Compile Include="Assets\Scripts\EnemyAI\StandardZombie.cs" />
+    <Compile Include="Assets\Scripts\GunBehaviour\Gun.cs" />
+    <Compile Include="Assets\Scripts\GunBehaviour\WeaponSway.cs" />
     <Compile Include="Assets\Scripts\NonMain\AudioManager.cs" />
     <Compile Include="Assets\Scripts\EnemyAI\ZombieAI.cs" />
+    <Compile Include="Assets\Scripts\ScriptableObj\GunData.cs" />
     <Compile Include="Assets\Scripts\PlayerBased\PlayerCollision.cs" />
+    <Compile Include="Assets\Scripts\GunBehaviour\SwitchWeapon.cs" />
     <Compile Include="Assets\Scripts\PlayerBased\QMovement.cs" />
-    <Compile Include="Assets\Scripts\GunBehaviour\QPlasmaGun.cs" />
     <Compile Include="Assets\Scripts\SystemVariables\QSysVars.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\Interfaces\IDamageable.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

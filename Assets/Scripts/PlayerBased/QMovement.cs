@@ -8,6 +8,7 @@ public class QMovement : MonoBehaviour
 {
     /*
     **KEEP IN MIND: This is a PORT of the Quake 3 movement. It is NOT FROM SCRATCH. I used the quake 3 source code to help me port this code.**
+    **I tried porting with a rigidBody but this was pretty tough since you had to apply all kinds of none needed Physics**
      */
     QCam qCam;
     //^Scripts
@@ -73,7 +74,7 @@ public class QMovement : MonoBehaviour
     /// <summary>
     /// Set the movement direction based on the players input.
     /// </summary>
-    private void SetMovementDir() //! left from here. After break get back te work dipshit.
+    private void SetMovementDir() //Using Unity new input system for easy use.
     {
         moveZ = Input.GetAxisRaw("Vertical");
         moveX = Input.GetAxisRaw("Horizontal");
@@ -87,15 +88,15 @@ public class QMovement : MonoBehaviour
     /// </summary>
     private void QueueJump()
     {
-        if (holdJumpToBhop == true) //early returns with a jump in the next action buffer.
+        if (holdJumpToBhop) //early returns with a jump in the next action buffer.
         {
-            wishJump = Input.GetButton("Jump");
+            wishJump = Input.GetKey(KeyCode.Space);
             return;
         }
 
-        if (Input.GetButtonDown("Jump") && !wishJump)
+        if (Input.GetKeyDown(KeyCode.Space) && !wishJump)
         { wishJump = true; } //if pressed down but wishJump != jump then return true to jump
-        if (Input.GetButtonUp("Jump"))
+        if (Input.GetKeyUp(KeyCode.Space))
         { wishJump = false; }
     }
 
@@ -246,7 +247,7 @@ public class QMovement : MonoBehaviour
         /* Only if the player is on the ground then apply friction */
         if (body.isGrounded)
         {
-            control = speed < runDeaccel ? runDeaccel : speed; //Checks if speed is lower then Deaccel or runDeaccel == speed;
+            control = speed < runDeaccel ? runDeaccel : speed; //Checks if speed is lower then runDeaccel or runDeaccel == speed;
             drop = control * friction * Time.deltaTime * t;
         }
 

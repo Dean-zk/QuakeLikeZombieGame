@@ -2,24 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ZombieAI : MonoBehaviour
+public class ZombieAI : MonoBehaviour, IDamageable
 {
-    public int zombHealth = 100;
-    float zombSpeed;
-    AudioClip zombSound;
-    GameObject zombie;
-    void Start()
-    {
-        zombie = GetComponent<GameObject>();
-    }
+    private float health = 100;
 
-    // Update is called once per frame
-    void Update()
+    public void Damage(float pDamage)
     {
-        print(zombHealth);
-        if (zombHealth <= 0)
-        {
-            Object.Destroy(zombie);
-        }
+        health -= pDamage;
+        if (health <= 0 )
+        { Destroy(gameObject); }
     }
 }

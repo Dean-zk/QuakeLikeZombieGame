@@ -8,14 +8,16 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioClip m_Back1;
     [SerializeField] AudioClip m_Back2;
     [SerializeField] AudioClip m_Back3;
-    int i;
-    void Start()
+    AudioClip[] clipAr;
+
+    private void Start()
     {
+
     }
 
     void Update()
     {
-        PlayAudio();
+        //PlayAudio();
     }
 
     void PlayAudio()
