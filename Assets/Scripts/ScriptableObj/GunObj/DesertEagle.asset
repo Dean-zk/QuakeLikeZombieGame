@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: DesertEagle
   m_EditorClassIdentifier: 
   wpName: Desert Eagle
-  damage: 75
+  damage: 100
   range: 1000
   currentAmmo: 8
   magSize: 8
-  fireRate: 100
-  reloadTime: 2
+  fireRate: 75
+  reloadTime: 2.2
   reloading: 0
