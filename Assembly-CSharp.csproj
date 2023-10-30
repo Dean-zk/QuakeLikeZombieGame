@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\ScriptableObj\GunData.cs" />
     <Compile Include="Assets\Scripts\PlayerBased\PlayerCollision.cs" />
     <Compile Include="Assets\Scripts\GunBehaviour\SwitchWeapon.cs" />
+    <Compile Include="Assets\Scripts\QMoveRB.cs" />
     <Compile Include="Assets\Scripts\PlayerBased\QMovement.cs" />
     <Compile Include="Assets\Scripts\EnemyAI\ZombieFactory.cs" />
     <Compile Include="Assets\Scripts\SystemVariables\QSysVars.cs" />
