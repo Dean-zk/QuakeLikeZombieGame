@@ -5,18 +5,20 @@ using UnityEngine.AI;
 
 public class ZombieAI : MonoBehaviour, IDamageable
 {
-    [SerializeField] Transform dest;
+    //public Transform destination;
     private NavMeshAgent agent;
     private float health = 100;
+    GameObject player;
 
     private void Start()
     {
-       agent = GetComponent<NavMeshAgent>();
+        player = GameObject.FindWithTag("Player");
+        agent = GetComponent<NavMeshAgent>();
     }
 
     private void Update()
     {
-        agent.destination = dest.position;
+        agent.destination = player.transform.position;
     }
     public void Damage(float pDamage)
     {

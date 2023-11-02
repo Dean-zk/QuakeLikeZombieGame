@@ -31,7 +31,7 @@ public class Gun : MonoBehaviour
         if (!CanShoot())
         { return; }
 
-        muzzleFlash.Play(); //? This causes a visual bug.
+        muzzleFlash.Play(); //? This causes a visual bug. Can be fixed by putting it in its own class.
         Debug.DrawRay(firePoint.position, firePoint.forward, Color.green); //# DEBUG Purpose only.
 
         if (Physics.Raycast(firePoint.position, transform.forward, out RaycastHit hitInfo, gunData.range)) //Checks if the ray has hit anything.

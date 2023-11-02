@@ -11,17 +11,16 @@ public class ZombieFactory : MonoBehaviour
     public ZombieAI zombiePrefab;
     NavMeshAgent agent;
     public Transform player;
-
     const int Wave_Size = 10;
 
 
     //? ERROR: Does not assign the destination to the zombie for some reason.
     // Update is called once per frame
-    /*void Start()
+    void Start()
     {
         for (int i = 0; i < Wave_Size; i++) //voor elke int ga ik ervoor zorgen dat er een tank gespawned word.
         {
             ZombieAI myZomb = Instantiate(zombiePrefab);
         }
-    }*/
+    }
 }

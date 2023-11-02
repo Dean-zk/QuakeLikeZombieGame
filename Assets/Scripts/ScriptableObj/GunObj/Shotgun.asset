@@ -15,8 +15,8 @@ MonoBehaviour:
   wpName: SuperShotgun
   damage: 250
   range: 200
-  currentAmmo: 0
+  currentAmmo: 2
   magSize: 2
-  fireRate: 200
-  reloadTime: 2.5
+  fireRate: 300
+  reloadTime: 1.6
   reloading: 0
