@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.PackageManager;
 using UnityEngine;
 
 public class QMoveRB : MonoBehaviour
@@ -23,7 +20,8 @@ public class QMoveRB : MonoBehaviour
 
     void Update()
     {
-        
+        SetMovementDir();
+        //Accelerate(moveX, moveSpeed, jumpForce);
     }
     
     void SetMovementDir()
@@ -37,4 +35,12 @@ public class QMoveRB : MonoBehaviour
      *when going 1 direction add force to the player.
      *when going into both directions. slowly move the player more to the wishdir
      */
+
+    void Accelerate(Vector3 wishdir, float wishspeed, float accel)
+    {
+        Vector3 forward = transform.forward;
+        Vector3 right = transform.right;
+        currentSpeed = Vector3.Dot(rb.velocity, wishdir);
+        Vector3 wishDir = (forward * moveZ + right * moveX).normalized;
+    }
 }

@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cc4022f03aef1db48ac08b56c0932aee, type: 3}
-  m_Name: P90
+  m_Name: Awp
   m_EditorClassIdentifier: 
-  wpName: P90
-  damage: 10
-  range: 500
-  currentAmmo: 45
-  magSize: 45
-  fireRate: 1800
-  reloadTime: 1.2
+  wpName: AWP
+  damage: 300
+  range: 5000
+  currentAmmo: 7
+  magSize: 7
+  fireRate: 25
+  reloadTime: 3
   reloading: 0

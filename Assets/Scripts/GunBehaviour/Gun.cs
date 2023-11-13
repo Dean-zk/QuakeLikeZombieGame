@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Gun : MonoBehaviour
@@ -48,7 +47,7 @@ public class Gun : MonoBehaviour
     }
 
     /*Simply returns reloading to be false in case of a check.*/
-    private void OnDisable() => gunData.reloading = false; 
+    private void OnDisable() => gunData.reloading = false;
 
     /// <summary>
     /// A function to start reloading the current gun.

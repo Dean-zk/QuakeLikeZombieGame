@@ -1,7 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Diagnostics.Contracts;
 using UnityEngine;
 
 public class PlayerShoot : MonoBehaviour
@@ -11,7 +8,7 @@ public class PlayerShoot : MonoBehaviour
      * Static isn't bad in this context because it serves as a protection/savity layer.
      */
 
-    public static Action shotTrigger; //Action allows to dynamically call multiple functions for one var.
+    public static Action shotTrigger; //Action allows to dynamically call/assign multiple functions for one var.
     public static Action reloadInput;
 
     [SerializeField] private KeyCode reloadKey = KeyCode.R;

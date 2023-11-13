@@ -1,17 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class ZombieAI : MonoBehaviour, IDamageable
 {
     //public Transform destination;
+    public ZombieFactory factory;
     private NavMeshAgent agent;
     private float health = 100;
     GameObject player;
 
     private void Start()
     {
+        factory = FindObjectOfType<ZombieFactory>();
         player = GameObject.FindWithTag("Player");
         agent = GetComponent<NavMeshAgent>();
     }
@@ -24,6 +24,6 @@ public class ZombieAI : MonoBehaviour, IDamageable
     {
         health -= pDamage;
         if (health <= 0 )
-        { Destroy(gameObject); }
+        { Destroy(gameObject); factory.zombieCount--; } //for eventual wave system.
     }
 }

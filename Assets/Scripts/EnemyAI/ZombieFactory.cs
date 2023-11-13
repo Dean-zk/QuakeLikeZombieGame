@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -10,17 +8,25 @@ public class ZombieFactory : MonoBehaviour
     public ZombieAI zombie;
     public ZombieAI zombiePrefab;
     NavMeshAgent agent;
+    private int indexHolder; //Used for certain for loop based checks.
     public Transform player;
-    const int Wave_Size = 10;
-
-
-    //? ERROR: Does not assign the destination to the zombie for some reason.
-    // Update is called once per frame
-    void Start()
+    public int zombieCount = 0;
+    int Wave_Size = 5;
+    float waveDelay = 5;
+    float nextEnemyDelay = 1f;
+    private void Update()
     {
-        for (int i = 0; i < Wave_Size; i++) //voor elke int ga ik ervoor zorgen dat er een tank gespawned word.
+        if (zombieCount == 0)
         {
-            ZombieAI myZomb = Instantiate(zombiePrefab);
+            Wave_Size += 5;
+            for (int i = 0; i < Wave_Size; i++)
+            {
+                Instantiate(zombiePrefab);
+                zombieCount++;
+            }
         }
+
+        //print(zombList);
+        //WaveFactory();
     }
 }

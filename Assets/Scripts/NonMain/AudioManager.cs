@@ -21,7 +21,7 @@ public class AudioManager : MonoBehaviour
 
     void Update()
     {
-        //PlayAudio();
+        PlayAudio();
         JumpAudio();
     }
 

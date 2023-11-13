@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 // Contains the command the user wishes upon the character
@@ -8,7 +6,8 @@ public class QMovement : MonoBehaviour
 {
     /*
     **KEEP IN MIND: This is a PORT of the Quake 3 movement. It is NOT FROM SCRATCH. I used the quake 3 source code to help me port this code.**
-    **I tried porting with a rigidBody but this was pretty tough since you had to apply all kinds of none needed Physics**
+    **I tried porting with a rigidBody but this was pretty tough since you had to apply all kinds of none needed Physics. Plus it also did not work the same.**
+    **I will definitly revisit the RB port once I have more time on my hands.**
      */
     QCam qCam;
     //^Scripts
@@ -279,27 +278,6 @@ public class QMovement : MonoBehaviour
         playerVelocity.x += accelspeed * wishdir.x;
         playerVelocity.z += accelspeed * wishdir.z;
     }
-
-    /*private void Dash(Vector3 wishdir)
-    {
-        if (!Input.GetKeyDown(KeyCode.LeftControl))
-        {
-            return; 
-        }
-
-        else if (Input.GetKeyDown(KeyCode.LeftControl))
-        {
-            Vector3 v;
-            v = playerVelocity;
-
-            playerVelocity.x += dashAccel * wishdir.x;
-            playerVelocity.z += dashAccel * wishdir.z;
-        }
-        /*If input == ctrl then ->
-         playerVelocity *= dashAccel;
-        
-         Body.Move(playerVelocity * Time.timedelta);
-    }*/
 
     /// <summary>
     /// Simply checks if the player is on the ground and what function to acces.
